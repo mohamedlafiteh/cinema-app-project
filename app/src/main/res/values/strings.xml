@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Home</string>
+     <string-array name="cinemaList">
+         <item>Please select</item>
+         <item>Glasgow cinema</item>
+         <item>Edinburgh cinema</item>
+         <item>Stirling cinema</item>
+     </string-array>
+</resources>
