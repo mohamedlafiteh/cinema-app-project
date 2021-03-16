@@ -74,9 +74,6 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <Spinner
-            android:popupBackground="#A9A9A9"
-            android:background="@drawable/rounded_spinner"
-            android:radius="50dp"
             android:id="@+id/spinner_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,7 +82,10 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:background="@drawable/rounded_spinner"
             android:entries="@array/cinemaList"
+            android:popupBackground="#A9A9A9"
+            android:radius="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_cinema_id" />
@@ -182,7 +182,7 @@ Friendly" />
         </RadioGroup>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/search_button_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

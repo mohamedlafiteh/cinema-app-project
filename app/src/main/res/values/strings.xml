@@ -2,9 +2,16 @@
     <string name="app_name">Home</string>
     <string-array name="cinemaList">
         <item>Please select</item>
-        <item>Glasgow cinema</item>
-        <item>Edinburgh cinema</item>
-        <item>Stirling cinema</item>
+        <item>cinema1</item>
+        <item>cinema2</item>
+        <item>cinema3</item>
+    </string-array>
+
+    <string-array name="filmsSpinnerList">
+        <item>Please select</item>
+        <item>film1</item>
+        <item>film2</item>
+        <item>film3</item>
     </string-array>
     <string name="title_activity_login">LoginActivity</string>
     <!-- Strings used for fragments for navigation -->
