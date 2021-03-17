@@ -9,7 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CinemaApp">
-        <activity android:name=".AccountActivity"  android:label="Account page" android:parentActivityName=".MainActivity" ></activity>
+        <activity android:name=".CinemaDetailsActivity"  android:label="Cinema details" android:parentActivityName=".SearchResultsActivity"></activity>
+        <activity
+            android:name=".BookingConfirmationActivity"
+            android:label="Booking confirmation" />
+        <activity
+            android:name=".ViewFilmActivity"
+            android:label="Movie details"
+            android:parentActivityName=".SearchResultsActivity" />
+        <activity
+            android:name=".SearchResultsActivity"
+            android:label="Search results"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AccountActivity"
+            android:label="Account page"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="Login/register"

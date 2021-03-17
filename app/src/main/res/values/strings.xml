@@ -2,16 +2,23 @@
     <string name="app_name">Home</string>
     <string-array name="cinemaList">
         <item>Please select</item>
-        <item>cinema1</item>
-        <item>cinema2</item>
-        <item>cinema3</item>
+        <item>Cin-Glasgow</item>
+        <item>Cin-Uk</item>
+        <item>Cin-Edin</item>
     </string-array>
 
     <string-array name="filmsSpinnerList">
         <item>Please select</item>
-        <item>film1</item>
-        <item>film2</item>
-        <item>film3</item>
+        <item>Action</item>
+        <item>Drama</item>
+        <item>Thriller</item>
+    </string-array>
+    <string-array name="dateSpinnerList">
+        <item>Please select</item>
+        <item>2021-4-1</item>
+        <item>2021-5-2</item>
+        <item>2021-6-3</item>
+        <item>2021-7-4</item>
     </string-array>
     <string name="title_activity_login">LoginActivity</string>
     <!-- Strings used for fragments for navigation -->
