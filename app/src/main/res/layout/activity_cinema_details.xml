@@ -33,11 +33,11 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
-        android:background="@drawable/rounded_spinner"
         android:id="@+id/textView3"
-        android:layout_width="206dp"
-        android:layout_height="73dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:background="@drawable/rounded_spinner"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -47,10 +47,10 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="161dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Check on map"
+        android:text="@string/directions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
