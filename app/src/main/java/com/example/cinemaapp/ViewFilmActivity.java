@@ -9,21 +9,33 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ViewFilmActivity extends AppCompatActivity {
+    String c;
+    String s;
+    String f;
 
     ImageView imageView;
     TextView movieName;
+    TextView desMovie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_film);
 
         imageView=findViewById(R.id.img2_id);
         movieName=findViewById(R.id.img2_text_id);
+        desMovie=findViewById(R.id.textView2);
 
         Intent intent =getIntent();
         imageView.setImageResource(intent.getIntExtra("image",0));
         movieName.setText(intent.getStringExtra("name"));
+        desMovie.setText(intent.getStringExtra("des"));
+
+
+        c = intent.getStringExtra("cinemaN");
+         s = intent.getStringExtra("dateC");
+         f=intent.getStringExtra("name");
 
     }
 
@@ -32,8 +44,25 @@ public class ViewFilmActivity extends AppCompatActivity {
      */
     public void lunchBookingConfirmationActivity(View v) {
         // lunch the activity
-        Intent intent = new Intent(this, BookingConfirmationActivity.class);
-        startActivity(intent);
+
+        try {
+            if(c != null && s != null) {
+
+                Intent in = new Intent(this, BookingConfirmationActivity.class);
+                in.putExtra("cc2",c);
+                in.putExtra("ss2",s);
+                in.putExtra("ff2",f);
+                startActivity(in);
+            }else{
+                throw new NullPointerException("error here ");
+            }
+        }catch (NullPointerException e){
+            System.out.println("Exception error");
+        }
+
     }
 
 }
+
+
+

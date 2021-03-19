@@ -14,7 +14,7 @@ public class CustomAdepter extends BaseAdapter {
        private String[] movies;
        private int[] images;
 
-    public CustomAdepter(SearchResultsActivity searchResultsActivity, String[] movies, int[] images) {
+    public CustomAdepter(SearchResultsActivity searchResultsActivity, String[] movies, int[] images, String[] movieDescription) {
         search=searchResultsActivity;
         this.movies=movies;
         this.images=images;
