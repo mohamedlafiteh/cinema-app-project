@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CinemaApp">
-        <activity android:name=".CinemaDetailsActivity"  android:label="Cinema details" android:parentActivityName=".SearchResultsActivity"></activity>
+        <activity android:name=".ConfirmedShowActivity"></activity>
+        <activity
+            android:name=".CinemaDetailsActivity"
+            android:label="Cinema details"
+            android:parentActivityName=".SearchResultsActivity" />
         <activity
             android:name=".BookingConfirmationActivity"
             android:label="Booking confirmation" />

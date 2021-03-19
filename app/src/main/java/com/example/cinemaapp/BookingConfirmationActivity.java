@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class BookingConfirmationActivity extends AppCompatActivity {
@@ -30,5 +32,15 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             System.out.println("Exception error");
         }
 
+        Button butt = findViewById(R.id.cancel_button_id);
+
+        butt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
+
 }

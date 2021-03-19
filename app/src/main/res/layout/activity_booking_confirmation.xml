@@ -147,7 +147,7 @@
 
 
         <Button
-            android:id="@+id/search_button_id"
+            android:id="@+id/cancel_button_id"
             android:layout_width="93dp"
             android:layout_height="45dp"
             android:layout_marginStart="68dp"
@@ -170,7 +170,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/search_button_id"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button_id"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintVertical_bias="0.666" />
 
