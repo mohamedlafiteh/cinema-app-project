@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class BookingConfirmationActivity extends AppCompatActivity {
 
+    String selectSeatPassed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,4 +44,28 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
     }
 
+    public void lunchSeatSelectActivity(View v) {
+        // lunch the activity
+        Intent i= new Intent(this, SeatSelectActivity.class);
+        startActivityForResult(i, 1);
+    }
+
+
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                String strEditText = data.getStringExtra("seat");
+                TextView t=findViewById(R.id.textView11);
+                t.setText(strEditText);
+            }
+        }
+    }
+
+    public void lunchConfirmShowActivity(View v) {
+        // lunch the activity
+        Intent i= new Intent(this, ConfirmedShowActivity.class);
+        startActivityForResult(i, 1);
+    }
 }

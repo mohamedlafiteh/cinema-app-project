@@ -41,16 +41,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         populateDate();
         populateFilm();
 
-//        searchButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String months = dateSpinner.getSelectedItem().toString();
-//                String cinema = cinemaSpinner.getSelectedItem().toString();
-//                String film = filmSpinner.getSelectedItem().toString();
-//
-//                Toast.makeText(MainActivity.this, months + ", " + cinema + "," + film, Toast.LENGTH_SHORT).show();
-//            }
-//        });
 
         cinemaSpinner.setOnItemSelectedListener(this);
         dateSpinner.setOnItemSelectedListener(this);
