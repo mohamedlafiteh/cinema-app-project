@@ -16,12 +16,7 @@ public class RegistrationConfirmed extends AppCompatActivity {
         setContentView(R.layout.activity_registration_confirmed);
         MainButton = findViewById(R.id.MainButton);
 
-        MainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenMainActivity();
-            }
-        });
+
     }
     public void OpenMainActivity() {
         Intent intent = new Intent(this, LoginActivity.class);
