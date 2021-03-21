@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BookingConfirmationActivity extends AppCompatActivity {
 
@@ -56,11 +57,6 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         answer = (TextView) findViewById(R.id.textView10);
         tickP = (TextView) findViewById(R.id.textView123);
         tickTotal = (TextView) findViewById(R.id.textView4);
-
-
-
-
-
 
         Spinner spinner_convert_from = (Spinner) findViewById(R.id.spinner_ticket_id);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -130,7 +126,14 @@ public class BookingConfirmationActivity extends AppCompatActivity {
     public void lunchConfirmShowActivity(View v) {
         // lunch the activity
         Intent i= new Intent(this, ConfirmedShowActivity.class);
-        startActivityForResult(i, 1);
+        TextView t=findViewById(R.id.textView11);
+        String seatNumber = t.getText().toString();
+        if(seatNumber.length()==0) {
+            Toast.makeText(BookingConfirmationActivity.this,
+                    "Please select seat", Toast.LENGTH_LONG).show();
+        } else {
+            startActivityForResult(i, 1);
+        }
     }
     /**
      * Lunch the account page activity .

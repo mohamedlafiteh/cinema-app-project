@@ -67,23 +67,30 @@ public class SeatSelectActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-             //   System.out.println("--------------------------------> seat " + seatNumberText.getText().toString());
-//                Intent intent = new Intent(getApplicationContext(),BookingConfirmationActivity.class);
-//                intent.putExtra("seat",seatNumberText.getText().toString());
-//                finish();
-
-
                 Intent intent = new Intent(getApplicationContext(),BookingConfirmationActivity.class);
-                System.out.println("--------------------------------> seat " + seatNumberText.getText().toString());
-                intent.putExtra("seat",seatNumberText.getText().toString());
-                setResult(RESULT_OK, intent);
+                TextView t=findViewById(R.id.seatNumberText);
+                String seatNumber = t.getText().toString();
+                if(seatNumber.length()==0) {
+                    Toast.makeText(SeatSelectActivity.this,
+                            "Please select seat before confirm", Toast.LENGTH_LONG).show();
+                } else {
+                    intent.putExtra("seat",seatNumberText.getText().toString());
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            }
+        });
+
+        Button CancelButt = findViewById(R.id.cancel_seatBook_button_id);
+
+        CancelButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
 
-
     }
-
 
     /**
      * Function to check each seats booking status and update graphics accordingly

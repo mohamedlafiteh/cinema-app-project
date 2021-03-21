@@ -5,15 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private static int TIME_OUT = 3000; //Time to launch the another activity
 
     Button Register;
     Spinner spinnerYear;
@@ -47,22 +50,35 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         preferences = getSharedPreferences("userinfo",0);
 
 
-
-
-
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 String firstnameValue = firstName.getText().toString();
                 String lastnameValue = lastName.getText().toString();
                 String EmailValue = email.getText().toString();
                 String PasswordValue = password.getText().toString();
+
+
                 String confirmpasswordValue = confirmPassword.getText().toString();
                 String cardnumberValue = cardNumber.getText().toString();
-                Toast.makeText(RegisterActivity.this, "Registration completed!", Toast.LENGTH_SHORT).show();
-                openRegistrationConfirmation();
 
-                if (EmailValue.length()> 1) {
+                if(firstnameValue.length()==0) {
+                    Toast.makeText(RegisterActivity.this,
+                            "Please enter your first name", Toast.LENGTH_LONG).show();
+                } else if(lastnameValue.length()==0) {
+                    Toast.makeText(RegisterActivity.this,
+                            "Please enter your last name", Toast.LENGTH_LONG).show();
+                }else if(email.length()==0) {
+                    Toast.makeText(RegisterActivity.this,
+                            "Please enter your email address", Toast.LENGTH_LONG).show();
+                }else if(PasswordValue.length()==0) {
+                    Toast.makeText(RegisterActivity.this,
+                            "Please enter your password", Toast.LENGTH_LONG).show();
+                }else  {
+                    openRegistrationConfirmation();
+
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("email", EmailValue);
                     editor.putString("firstName", firstnameValue);
@@ -72,11 +88,17 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     editor.putString("cardNumber", cardnumberValue);
                     editor.apply();
                     Toast.makeText(RegisterActivity.this, "User Registered!", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(RegisterActivity.this, "Enter values in fields", Toast.LENGTH_SHORT).show();
-                }
 
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                    }, TIME_OUT);
+
+                }
             }
         });
     }

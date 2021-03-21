@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     Spinner cinemaSpinner, dateSpinner, filmSpinner;
     Button searchButton;
-   // String[] months;
+    // String[] months;
     ArrayList<String> selectedData = new ArrayList<>();
 
     @Override
@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (parent.getId() == R.id.spinner_id) {
             String c = parent.getSelectedItem().toString();
             selectedData.add(c);
-           // Toast.makeText(MainActivity.this, c, Toast.LENGTH_SHORT).show();
-        }else if(parent.getId() == R.id.date_spinner_id) {
+            // Toast.makeText(MainActivity.this, c, Toast.LENGTH_SHORT).show();
+        } else if (parent.getId() == R.id.date_spinner_id) {
             String d = parent.getSelectedItem().toString();
             selectedData.add(d);
-           // Toast.makeText(MainActivity.this, d, Toast.LENGTH_SHORT).show();
-        }else if(parent.getId() == R.id.film_spinner_id) {
+            // Toast.makeText(MainActivity.this, d, Toast.LENGTH_SHORT).show();
+        } else if (parent.getId() == R.id.film_spinner_id) {
             String f = parent.getSelectedItem().toString();
             selectedData.add(f);
-         //   Toast.makeText(MainActivity.this, f, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(MainActivity.this, f, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -74,8 +74,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void lunchSearchResultActivity(View v) {
         // lunch the activity
         Intent intent = new Intent(this, SearchResultsActivity.class);
-        intent.putExtra("results", selectedData);
-        startActivity(intent);
+        for (int i =0 ; i < selectedData.size();i++){
+            selectedData.remove("Please select");
+        }
+
+        if (selectedData.size() < 3) {
+            Toast.makeText(MainActivity.this,
+                    "Please select all options", Toast.LENGTH_LONG).show();
+        }else {
+            intent.putExtra("results", selectedData);
+            startActivity(intent);
+        }
     }
 
     private void populateCinema() {
@@ -85,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void populateDate() {
-      //  months = new DateFormatSymbols().getMonths();
+        //  months = new DateFormatSymbols().getMonths();
         ArrayAdapter<String> dateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.dateSpinnerList));
         dateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dateSpinner.setAdapter(dateAdapter);

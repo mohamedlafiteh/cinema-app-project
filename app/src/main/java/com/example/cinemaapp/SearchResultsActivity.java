@@ -33,11 +33,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         Intent in = getIntent();
 
         resultList = in.getStringArrayListExtra("results");
-        for (int i =0 ; i < resultList.size();i++){
-            resultList.remove("Please select");
-        }
 
-//there is a bug her, this code doesnt work if the size less than 3, we need to add validation
          if(resultList.size()==3) {
 
 

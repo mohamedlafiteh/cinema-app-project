@@ -9,11 +9,11 @@
 
 
     <ImageView
-        android:background="@drawable/image_rounded_corner"
         android:id="@+id/imageView"
-        android:layout_width="354dp"
-        android:layout_height="124dp"
+        android:layout_width="356dp"
+        android:layout_height="66dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/image_rounded_corner"
         android:src="@drawable/c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="333dp"
-        android:layout_height="521dp"
+        android:layout_width="291dp"
+        android:layout_height="536dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
@@ -67,91 +67,92 @@
 
         <EditText
             android:id="@+id/name"
-            android:layout_width="130dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="82dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="First Name"
+            android:text=""
             android:textColor="#B5AFAF"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <EditText
             android:id="@+id/emailAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_width="153dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="Email address"
+            android:text=""
             android:textColor="#B5AFAF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <EditText
             android:id="@+id/LastName"
-            android:layout_width="118dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="82dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="Last Name"
+            android:text=""
             android:textColor="#B5AFAF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
             app:layout_constraintStart_toEndOf="@+id/name"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
 
         <EditText
             android:id="@+id/PasswordRegistration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_width="152dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:hapticFeedbackEnabled="false"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="Password"
+            android:text=""
             android:textColor="#B5AFAF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
-
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <EditText
             android:id="@+id/PasswordConfirmation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_width="153dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="Confirm password"
-
-
+            android:text=""
             android:textColor="#B5AFAF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PasswordRegistration" />
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="122dp"
             android:layout_height="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:text="Credit/Debit Card number:"
             android:textColor="#040000"
 
@@ -165,7 +166,7 @@
             android:id="@+id/CardNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPersonName"
@@ -177,7 +178,7 @@
             android:id="@+id/SpinnerYear"
             android:layout_width="84dp"
             android:layout_height="35dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             app:layout_constraintEnd_toStartOf="@+id/spinnerMonth"
             app:layout_constraintHorizontal_bias="0.712"
@@ -190,7 +191,7 @@
             android:layout_height="22dp"
             android:layout_marginStart="72dp"
             android:layout_marginLeft="72dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:text="Expiry Date"
             android:textColor="#040101"
             android:textStyle="bold"
@@ -201,7 +202,7 @@
             android:id="@+id/spinnerMonth"
             android:layout_width="85dp"
             android:layout_height="35dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="64dp"
             android:layout_marginRight="64dp"
             android:background="#FFFFFF"
@@ -214,7 +215,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="96dp"
             android:layout_marginLeft="96dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:text="Month"
             android:textColor="#020000"
             android:textStyle="bold|italic"
@@ -225,7 +226,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="92dp"
             android:layout_marginRight="92dp"
             android:text="Year"
@@ -238,25 +239,78 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="8dp"
+            android:text="First name "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_title_id" />
 
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Last name "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.095"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/register_title_id" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Confirm passwprd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PasswordRegistration" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="290dp"
         android:layout_height="24dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="16dp"
         android:text="A confirmation email will be sent to you"
         android:textColor="#020101"
         android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        tools:layout_editor_absoluteX="60dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

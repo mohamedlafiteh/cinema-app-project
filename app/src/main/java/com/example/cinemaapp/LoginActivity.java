@@ -31,9 +31,6 @@ public class LoginActivity extends AppCompatActivity {
 
         preferences = getSharedPreferences("userinfo",0);
 
-
-
-
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,18 +39,20 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 String registerEmail = preferences.getString("email","");
-                System.out.println("-------------------> e " + registerEmail);
-                System.out.println("-------------------> p " + UsernamePassword);
+
                 String registerPassword = preferences.getString("password","");
 
-                if (EmailValue.equals(registerEmail) && UsernamePassword.equals(registerPassword)) {
+                if(!EmailValue.equals(registerEmail) ) {
+                    Toast.makeText(LoginActivity.this, "please Enter the right Email address", Toast.LENGTH_SHORT).show();
+
+                }else if (!UsernamePassword.equals(registerPassword)) {
+                    Toast.makeText(LoginActivity.this, "please Enter the right password", Toast.LENGTH_SHORT).show();
+                }else {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
 
                 }
-                else {
-                    Toast.makeText(LoginActivity.this, "please Enter the right Email and Password", Toast.LENGTH_SHORT).show();
-                }
+
             }
 
 

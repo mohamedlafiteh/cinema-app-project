@@ -65,7 +65,7 @@
 
 
         <Button
-            android:id="@+id/search_button_id"
+            android:id="@+id/cancel_seatBook_button_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
