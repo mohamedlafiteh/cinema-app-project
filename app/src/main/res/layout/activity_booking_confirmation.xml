@@ -134,16 +134,17 @@
 
 
         <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="30dp"
-            android:layout_height="17dp"
+            android:id="@+id/spinner_ticket_id"
+            android:layout_width="41dp"
+            android:layout_height="26dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_spinner"
+            android:entries="@array/tickets"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintHorizontal_bias="0.216"
             app:layout_constraintStart_toEndOf="@+id/textView6" />
 
         <Button
@@ -209,7 +210,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:text="£31.98"
+                android:text="£0.0"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -233,9 +234,20 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:text="2 / £15.99"
+                android:text="£14.5"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView123"
+                android:layout_width="32dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="16dp"
+                android:text="0"
+                app:layout_constraintEnd_toStartOf="@+id/textView10"
+                app:layout_constraintHorizontal_bias="0.561"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

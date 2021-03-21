@@ -5,12 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class BookingConfirmationActivity extends AppCompatActivity {
 
     String selectSeatPassed;
+
+    TextView answer;
+    TextView tickTotal;
+    TextView tickP;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +51,62 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             }
         });
 
+
+        // Views
+        answer = (TextView) findViewById(R.id.textView10);
+        tickP = (TextView) findViewById(R.id.textView123);
+        tickTotal = (TextView) findViewById(R.id.textView4);
+
+
+
+
+
+
+        Spinner spinner_convert_from = (Spinner) findViewById(R.id.spinner_ticket_id);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.tickets, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_convert_from.setAdapter(adapter);
+
+        // Add item selected listener
+        spinner_convert_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v, int pos,
+                                       long id) {
+
+                if (pos == 0) {
+                 //  String s1= parent.getSelectedItem().toString();
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*1));
+                    tickP.setText(parent.getSelectedItem().toString());
+                } else if (pos == 1) {
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*2));
+                    tickP.setText(parent.getSelectedItem().toString());
+
+                } else if (pos == 2) {
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*3));
+                    tickP.setText(parent.getSelectedItem().toString());
+
+                } else if (pos == 3) {
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*4));
+                    tickP.setText(parent.getSelectedItem().toString());
+
+                } else if (pos == 4) {
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*5));
+                    tickP.setText(parent.getSelectedItem().toString());
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
     }
+
 
     public void lunchSeatSelectActivity(View v) {
         // lunch the activity
