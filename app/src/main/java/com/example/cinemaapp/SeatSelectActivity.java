@@ -128,6 +128,7 @@ public class SeatSelectActivity extends AppCompatActivity {
         }
     }
 
+
     public void seatA1(View view){
         //Save text currently in 'selected seat' box (to know if were clicking same button again to deselect it)
         CharSequence c = seatNumberText.getText();

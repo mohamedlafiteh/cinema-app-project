@@ -23,6 +23,7 @@ public class ConfirmedShowActivity extends AppCompatActivity {
                 finish();
             }
         }, TIME_OUT);
+
     }
 }
 

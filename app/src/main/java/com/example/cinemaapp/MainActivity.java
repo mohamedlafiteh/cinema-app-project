@@ -19,9 +19,17 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+
+    /**
+     Get the spinner selection
+     */
+
     Spinner cinemaSpinner, dateSpinner, filmSpinner;
     Button searchButton;
-    // String[] months;
+
+    /**
+     This array to store the selected data from the spinner
+     */
     ArrayList<String> selectedData = new ArrayList<>();
 
     @Override
@@ -53,16 +61,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if (parent.getId() == R.id.spinner_id) {
             String c = parent.getSelectedItem().toString();
+            //Add the selected cinema to the array list
             selectedData.add(c);
-            // Toast.makeText(MainActivity.this, c, Toast.LENGTH_SHORT).show();
         } else if (parent.getId() == R.id.date_spinner_id) {
             String d = parent.getSelectedItem().toString();
             selectedData.add(d);
-            // Toast.makeText(MainActivity.this, d, Toast.LENGTH_SHORT).show();
         } else if (parent.getId() == R.id.film_spinner_id) {
             String f = parent.getSelectedItem().toString();
             selectedData.add(f);
-            //   Toast.makeText(MainActivity.this, f, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -71,6 +77,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    /**
+    Lunch Search Result Activity
+     */
     public void lunchSearchResultActivity(View v) {
         // lunch the activity
         Intent intent = new Intent(this, SearchResultsActivity.class);
@@ -82,17 +91,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(MainActivity.this,
                     "Please select all options", Toast.LENGTH_LONG).show();
         }else {
+            // pass the data to the search result activity
             intent.putExtra("results", selectedData);
             startActivity(intent);
         }
     }
 
+
+    /**
+     Lunch populate Cinema from the array of names
+     */
     private void populateCinema() {
         ArrayAdapter<String> cinemaAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.cinemaList));
         cinemaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cinemaSpinner.setAdapter(cinemaAdapter);
     }
 
+    /**
+     Lunch populate Cinema from the array of dates
+     */
     private void populateDate() {
         //  months = new DateFormatSymbols().getMonths();
         ArrayAdapter<String> dateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.dateSpinnerList));

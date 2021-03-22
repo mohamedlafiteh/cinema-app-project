@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CinemaApp">
-        <activity android:name=".SeatSelectActivity"></activity>
-        <activity android:name=".RegistrationConfirmed" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".SeatSelectActivity"    android:label="Seats page"></activity>
+        <activity android:name=".RegistrationConfirmed"    android:label="Register confirmed" />
+        <activity android:name=".RegisterActivity"     android:label="Registration page"/>
         <activity android:name=".ConfirmedShowActivity"  android:label="Confirmation"/>
         <activity
             android:name=".CinemaDetailsActivity"
@@ -22,8 +22,8 @@
             android:label="Booking confirmation" />
         <activity
             android:name=".ViewFilmActivity"
-            android:label="Movie details"
-            android:parentActivityName=".SearchResultsActivity" />
+            android:label="Film details"
+            />
         <activity
             android:name=".SearchResultsActivity"
             android:label="Search results"
@@ -31,11 +31,11 @@
         <activity
             android:name=".AccountActivity"
             android:label="Account page"
-            android:parentActivityName=".MainActivity" />
+         />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
            />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

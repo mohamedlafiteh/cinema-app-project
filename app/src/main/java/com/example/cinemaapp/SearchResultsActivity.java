@@ -16,7 +16,14 @@ import java.util.ArrayList;
 public class SearchResultsActivity extends AppCompatActivity {
 
     GridView gridView;
+    /**
+    Movie names array
+     */
     String [] movies = {"Light","Moon","Castle","Snow","Ghost","Sky"};
+
+    /**
+     Movie Description array
+     */
     String [] movieDescription = {"Light of the sky from 1990, it is been in the top ten",
             "Moon  of the sky from 1890, it is been in the top 20","Castle-of the sky from 2020, it is been in the top ten",
             "Snow-Light of the sky from 2021, it is been in the top ten","Ghost-Light of the sky from 1990, it is been in the top ten",
@@ -31,12 +38,10 @@ public class SearchResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
         Intent in = getIntent();
-
+        // get the data from the main activity
         resultList = in.getStringArrayListExtra("results");
 
          if(resultList.size()==3) {
-
-
              TextView cinemaView = findViewById(R.id.cin_type_id);
              TextView dateView = findViewById(R.id.search_date_id);
 
@@ -66,11 +71,10 @@ public class SearchResultsActivity extends AppCompatActivity {
              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                  Intent intent = new Intent(getApplicationContext(),ViewFilmActivity.class);
 
+
                  intent.putExtra("image",images[position]);
                  intent.putExtra("name",movies[position]);
                  intent.putExtra("des",movieDescription[position]);
-
-
 
                  for (int i =0 ; i < resultList.size();i++){
 

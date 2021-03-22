@@ -27,6 +27,7 @@ public class ViewFilmActivity extends AppCompatActivity {
         movieName=findViewById(R.id.img2_text_id);
         desMovie=findViewById(R.id.textView2);
 
+        //Get the values passed from the results page
         Intent intent =getIntent();
         imageView.setImageResource(intent.getIntExtra("image",0));
         movieName.setText(intent.getStringExtra("name"));
@@ -47,7 +48,7 @@ public class ViewFilmActivity extends AppCompatActivity {
 
         try {
             if(c != null && s != null) {
-
+                // pass the values to the BookingConfirmationActivity
                 Intent in = new Intent(this, BookingConfirmationActivity.class);
                 in.putExtra("cc2",c);
                 in.putExtra("ss2",s);

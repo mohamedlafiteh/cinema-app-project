@@ -13,9 +13,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class BookingConfirmationActivity extends AppCompatActivity {
 
     String selectSeatPassed;
+    String film;
+    String cinemaName;
+    String dateSelected;
+    ArrayList<String> allData = new ArrayList<>();
 
     TextView answer;
     TextView tickTotal;
@@ -32,6 +38,15 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             TextView dateView = findViewById(R.id.textView5);
             TextView filmView = findViewById(R.id.textView);
             if (intent.getStringExtra("cc2") != null && intent.getStringExtra("ss2") != null && intent.getStringExtra("ff2") != null) {
+
+
+                film = intent.getStringExtra("ff2");
+                cinemaName = intent.getStringExtra("cc2");
+                dateSelected = intent.getStringExtra("ss2");
+
+                allData.add(film);
+                allData.add(cinemaName);
+                allData.add(dateSelected);
 
                 filmView.setText(intent.getStringExtra("ff2"));
                 cinemaView.setText(intent.getStringExtra("cc2"));
@@ -71,23 +86,23 @@ public class BookingConfirmationActivity extends AppCompatActivity {
                                        long id) {
 
                 if (pos == 0) {
-                 //  String s1= parent.getSelectedItem().toString();
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*1));
+                    //  String s1= parent.getSelectedItem().toString();
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 1));
                     tickP.setText(parent.getSelectedItem().toString());
                 } else if (pos == 1) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*2));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 2));
                     tickP.setText(parent.getSelectedItem().toString());
 
                 } else if (pos == 2) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*3));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 3));
                     tickP.setText(parent.getSelectedItem().toString());
 
                 } else if (pos == 3) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*4));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 4));
                     tickP.setText(parent.getSelectedItem().toString());
 
                 } else if (pos == 4) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5)*5));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 5));
                     tickP.setText(parent.getSelectedItem().toString());
 
                 }
@@ -99,42 +114,48 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
 
     public void lunchSeatSelectActivity(View v) {
         // lunch the activity
-        Intent i= new Intent(this, SeatSelectActivity.class);
+        Intent i = new Intent(this, SeatSelectActivity.class);
         startActivityForResult(i, 1);
     }
-
 
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
-            if(resultCode == RESULT_OK) {
+            if (resultCode == RESULT_OK) {
                 String strEditText = data.getStringExtra("seat");
-                TextView t=findViewById(R.id.textView11);
+                TextView t = findViewById(R.id.textView11);
                 t.setText(strEditText);
             }
         }
     }
 
+
     public void lunchConfirmShowActivity(View v) {
         // lunch the activity
-        Intent i= new Intent(this, ConfirmedShowActivity.class);
-        TextView t=findViewById(R.id.textView11);
+        Intent i = new Intent(this, ConfirmedShowActivity.class);
+        TextView t = findViewById(R.id.textView11);
         String seatNumber = t.getText().toString();
-        if(seatNumber.length()==0) {
+        if (seatNumber.length() == 0) {
             Toast.makeText(BookingConfirmationActivity.this,
                     "Please select seat", Toast.LENGTH_LONG).show();
         } else {
-            startActivityForResult(i, 1);
+
+            try {
+                if (allData.size() > 0) {
+                    startActivityForResult(i, 1);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
+
     /**
      * Lunch the account page activity .
      */
@@ -142,7 +163,9 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         // lunch the activity
         Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
+
     }
+
     /**
      * Lunch the login page activity .
      */

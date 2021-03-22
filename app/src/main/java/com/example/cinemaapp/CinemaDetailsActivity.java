@@ -14,7 +14,9 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class CinemaDetailsActivity extends AppCompatActivity {
+    //Place holders cinema address
     String [] cinemaAddresses= {"51 Argyle street, Glasgow","6 Dumbarton Street, Glasgow","87 Clyde street, Glasgow","2130 Paisley Rd, Glasgow","19 Buchanan St, Glasgow","7 Renfrew St, Glasgow"};
+    // Ge the images into array
     int[] randomCinemaImages = {R.drawable.cc1,R.drawable.cc2,R.drawable.cc3,R.drawable.cc4,R.drawable.cc5,R.drawable.cc6};
 
     @Override
@@ -30,6 +32,7 @@ public class CinemaDetailsActivity extends AppCompatActivity {
         TextView add = findViewById(R.id.textView3);
         ImageView im = findViewById(R.id.imageView5);
 
+        // Generate random numbers from 0 to the arrays length
         int r1 = new Random().nextInt(cinemaAddresses.length);
         int r2 = new Random().nextInt(randomCinemaImages.length);
 
@@ -42,6 +45,9 @@ public class CinemaDetailsActivity extends AppCompatActivity {
         Button dirButton = findViewById(R.id.button2);
         dirButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                /**
+                 *Provides a link to google maps and shows the location of the cinema when 'get directions' button is clicked
+                 */
                 Uri cinemaIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(s));
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, cinemaIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
