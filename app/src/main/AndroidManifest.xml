@@ -33,9 +33,9 @@
             android:label="Account page"
          />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
            />
-        <activity  android:name=".LoginActivity">
+        <activity  android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

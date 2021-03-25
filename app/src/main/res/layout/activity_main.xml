@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_dark_background"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
 
     <ImageView
@@ -74,6 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <Spinner
+            android:backgroundTint="@color/grey"
             android:id="@+id/spinner_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,6 +104,7 @@
             app:layout_constraintTop_toBottomOf="@+id/spinner_id" />
 
         <Spinner
+            android:backgroundTint="@color/grey"
             android:id="@+id/date_spinner_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,6 +134,7 @@
             app:layout_constraintTop_toBottomOf="@+id/date_spinner_id" />
 
         <Spinner
+            android:backgroundTint="@color/grey"
             android:id="@+id/film_spinner_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,6 +164,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/film_spinner_id">
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Any" />
 
             <RadioButton
                 android:id="@+id/radioButton1"

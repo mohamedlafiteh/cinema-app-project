@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     editor.putString("confirmPassword", confirmpasswordValue);
                     editor.putString("cardNumber", cardnumberValue);
                     editor.apply();
-                    Toast.makeText(RegisterActivity.this, "User Registered!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "User Registered. A confirmation email will be sent to you!", Toast.LENGTH_SHORT).show();
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
