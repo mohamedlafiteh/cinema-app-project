@@ -59,8 +59,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 String lastnameValue = lastName.getText().toString();
                 String EmailValue = email.getText().toString();
                 String PasswordValue = password.getText().toString();
-
-
                 String confirmpasswordValue = confirmPassword.getText().toString();
                 String cardnumberValue = cardNumber.getText().toString();
 
@@ -76,6 +74,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 }else if(PasswordValue.length()==0) {
                     Toast.makeText(RegisterActivity.this,
                             "Please enter your password", Toast.LENGTH_LONG).show();
+                }else if(confirmpasswordValue.length()==0 ) {
+
+                    Toast.makeText(RegisterActivity.this,
+                            "Please enter your correct password confirmation", Toast.LENGTH_LONG).show();
+                }else if(cardnumberValue.length()==0) {
+                    Toast.makeText(RegisterActivity.this,
+                            "Please enter your card number", Toast.LENGTH_LONG).show();
                 }else  {
                     openRegistrationConfirmation();
 
