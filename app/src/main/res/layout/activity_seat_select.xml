@@ -99,7 +99,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/seatB2Button"
+            app:layout_constraintTop_toBottomOf="@+id/seatB3Button"
             tools:text="2B" />
 
         <TextView
@@ -148,28 +148,28 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
         <ImageButton
-            app:srcCompat="@drawable/seatnotavailable"
-            android:id="@+id/seatB2Button"
+            android:id="@+id/seatB3Button"
             android:layout_width="78dp"
             android:layout_height="59dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
-            android:onClick="seatB2"
+            android:onClick="seatB3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seatA2Button" />
+            app:layout_constraintTop_toBottomOf="@+id/seatA2Button"
+            app:srcCompat="@drawable/seatnotavailable" />
 
         <ImageButton
-            app:srcCompat="@drawable/seatavailable"
-            android:id="@+id/seatB3Button"
+            android:id="@+id/seatB2Button"
             android:layout_width="78dp"
             android:layout_height="59dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="20dp"
-            android:onClick="seatB3"
+            android:onClick="seatB2"
             app:layout_constraintStart_toEndOf="@+id/seatB1Button"
-            app:layout_constraintTop_toBottomOf="@+id/seatA1Button" />
+            app:layout_constraintTop_toBottomOf="@+id/seatA1Button"
+            app:srcCompat="@drawable/seatavailable" />
 
         <ImageButton
             app:srcCompat="@drawable/seatavailable"

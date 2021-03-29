@@ -10,11 +10,11 @@
 
 
     <ImageView
-        android:background="@drawable/image_rounded_corner"
         android:id="@+id/imageView"
-        android:layout_width="354dp"
-        android:layout_height="124dp"
+        android:layout_width="315dp"
+        android:layout_height="100dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/image_rounded_corner"
         android:src="@drawable/c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="320dp"
-        android:layout_height="396dp"
+        android:layout_height="450dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -67,7 +67,7 @@
             android:id="@+id/select_cinema_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Select your cinema"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,16 +75,16 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <Spinner
-            android:backgroundTint="@color/grey"
             android:id="@+id/spinner_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_spinner"
+            android:backgroundTint="@color/grey"
             android:entries="@array/cinemaList"
             android:popupBackground="#A9A9A9"
             android:radius="50dp"
@@ -96,7 +96,7 @@
             android:id="@+id/select_date_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Select date"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,16 +104,16 @@
             app:layout_constraintTop_toBottomOf="@+id/spinner_id" />
 
         <Spinner
-            android:backgroundTint="@color/grey"
             android:id="@+id/date_spinner_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_spinner"
+            android:backgroundTint="@color/grey"
             android:entries="@array/cinemaList"
             android:popupBackground="#A9A9A9"
             android:radius="50dp"
@@ -134,16 +134,16 @@
             app:layout_constraintTop_toBottomOf="@+id/date_spinner_id" />
 
         <Spinner
-            android:backgroundTint="@color/grey"
             android:id="@+id/film_spinner_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_spinner"
+            android:backgroundTint="@color/grey"
             android:entries="@array/cinemaList"
             android:popupBackground="#A9A9A9"
             android:radius="50dp"
@@ -194,7 +194,7 @@ Friendly" />
         <Button
             android:id="@+id/search_button_id"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginBottom="8dp"
             android:onClick="lunchSearchResultActivity"
             android:text="Search"

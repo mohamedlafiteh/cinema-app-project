@@ -44,6 +44,7 @@
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
+            android:hint="hello@example.com"
             android:inputType="textEmailAddress"
             android:paddingLeft="10dp"
             android:text=""

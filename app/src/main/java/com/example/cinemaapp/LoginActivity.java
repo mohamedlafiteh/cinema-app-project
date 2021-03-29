@@ -43,10 +43,10 @@ public class LoginActivity extends AppCompatActivity {
                 String registerPassword = preferences.getString("password","");
 
                 if(!EmailValue.equals(registerEmail) ) {
-                    Toast.makeText(LoginActivity.this, "please Enter the right Email address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
 
                 }else if (!UsernamePassword.equals(registerPassword)) {
-                    Toast.makeText(LoginActivity.this, "please Enter the right password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please enter the correct password", Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);

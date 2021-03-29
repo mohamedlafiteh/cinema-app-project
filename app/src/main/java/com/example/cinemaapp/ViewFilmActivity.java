@@ -43,7 +43,7 @@ public class ViewFilmActivity extends AppCompatActivity {
 
         imageView=findViewById(R.id.img2_id);
         movieName=findViewById(R.id.img2_text_id);
-        desMovie=findViewById(R.id.textView2);
+        desMovie=findViewById(R.id.lastNameView);
 
         //Get the values passed from the results page
         Intent intent =getIntent();

@@ -10,15 +10,31 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.ls.LSOutput;
+import java.util.ArrayList;
 
 public class SeatSelectActivity extends AppCompatActivity {
     //Is seat booked? for each seat
-    boolean seatA1Booked;
-    boolean seatA2Booked;
-    boolean seatB1Booked;
-    boolean seatB2Booked;
-    boolean seatB3Booked;
+    public static boolean seatA1Booked;
+    public static boolean seatA2Booked;
+    public static boolean seatB1Booked;
+    public static boolean seatB2Booked;
+    public static boolean seatB3Booked;
+
+    //is selected
+    public static boolean seatA1Selected;
+    public static boolean seatA2Selected;
+    public static boolean seatB1Selected;
+    public static boolean seatB2Selected;
+    public static boolean seatB3Selected;
+
+    ArrayList<String> selectedArray;
+
+    public void setSeatA1Booked(Boolean b){seatA1Booked = b;}
+    public void setSeatA2Booked(Boolean b){seatA2Booked = b;}
+    public void setSeatB1Booked(Boolean b){seatB1Booked = b;}
+    public void setSeatB2Booked(Boolean b){seatB2Booked = b;}
+    public void setSeatB3Booked(Boolean b){seatB3Booked = b;}
+
 
     //Image buttons for each seat
     ImageButton seatA1Button;
@@ -26,6 +42,8 @@ public class SeatSelectActivity extends AppCompatActivity {
     ImageButton seatB1Button;
     ImageButton seatB2Button;
     ImageButton seatB3Button;
+
+    Integer ticketNumber;
 
     //Text view to display selected seat
     TextView seatNumberText;
@@ -36,12 +54,19 @@ public class SeatSelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seat_select);
 
+        Intent intent = getIntent();
+        ticketNumber = intent.getIntExtra("ticket", 0);
+
+        selectedArray = new ArrayList<>();
+        //String sn = ticketNumber.toString();
+        //seatNumberText.setText(sn);
         //Initial 'booked' or 'not booked' status for each seat
         seatA1Booked = false;
-        seatA2Booked = true;
+        seatA2Booked = false;
         seatB1Booked = false;
-        seatB2Booked = true;
+        seatB2Booked = false;
         seatB3Booked = false;
+
 
         //Initialising TextView to display selected seat
         seatNumberText = (TextView) findViewById(R.id.seatNumberText);
@@ -59,22 +84,23 @@ public class SeatSelectActivity extends AppCompatActivity {
          **/
         imageUpdater();
 
+        //confirm seat booking button
         Button butt = findViewById(R.id.search_button_id4);
 
 
         butt.setOnClickListener(new View.OnClickListener() {
-            TextView s = findViewById(R.id.textView11);
+            //This is the text view in the confirmation page to show the first booked seat
+            TextView s = findViewById(R.id.seat1Select);
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),BookingConfirmationActivity.class);
-                TextView t=findViewById(R.id.seatNumberText);
-                String seatNumber = t.getText().toString();
-                if(seatNumber.length()==0) {
+
+                if(selectedArray.size() != ticketNumber) {
                     Toast.makeText(SeatSelectActivity.this,
-                            "Please select seat before confirm", Toast.LENGTH_LONG).show();
-                } else {
-                    intent.putExtra("seat",seatNumberText.getText().toString());
+                            "Please select all seats before confirming", Toast.LENGTH_LONG).show();
+                } else if (selectedArray.size() == ticketNumber) {
+                    intent.putExtra("allSeatsList",selectedArray);
                     setResult(RESULT_OK, intent);
                     finish();
                 }
@@ -96,6 +122,7 @@ public class SeatSelectActivity extends AppCompatActivity {
      * Function to check each seats booking status and update graphics accordingly
      */
     public void imageUpdater(){
+
         if (seatA1Booked){
             seatA1Button.setImageResource(R.drawable.seatnotavailable);
         }
@@ -128,109 +155,111 @@ public class SeatSelectActivity extends AppCompatActivity {
         }
     }
 
+ int numberOfSeats= 1;
 
     public void seatA1(View view){
-        //Save text currently in 'selected seat' box (to know if were clicking same button again to deselect it)
-        CharSequence c = seatNumberText.getText();
-
-        //If seat is currently booked, pop up error message shows
-        if(seatA1Booked){
-            Toast.makeText(this, "Seat already booked!", Toast.LENGTH_SHORT).show();
-        }
-
-        //If seat is available for booking, 'seatSelected' graphic is used and any other seat selections are cleared
-        if(!seatA1Booked){
-            seatA1Button.setImageResource(R.drawable.seatselected);
-            if(!seatA2Booked){seatA2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB1Booked){seatB1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB2Booked){seatB2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB3Booked){seatB3Button.setImageResource(R.drawable.seatavailable);}
-            seatNumberText.setText("A1");
-        }
-
-        //If selected seat is clicked again, the 'selected seat' box is cleared and selected graphic cleared
-        if(c.equals("A1")){
+        if(!seatA1Booked) {
+            if(numberOfSeats > ticketNumber) {
+                Toast.makeText(this, "You can't book more seats Sorry!", Toast.LENGTH_SHORT).show();
+            }else {
+                seatA1Button.setImageResource(R.drawable.seatselected);
+                seatA1Booked=true;
+                numberOfSeats++;
+                seatNumberText.setText("A1");
+                selectedArray.add("A1");
+            }
+        }else if (seatA1Booked) {
             seatA1Button.setImageResource(R.drawable.seatavailable);
+            seatA1Booked=false;
+            numberOfSeats--;
             seatNumberText.setText("");
+            selectedArray.remove("A1");
         }
+
     }
 
     public void seatA2(View view){
 
-        CharSequence c = seatNumberText.getText();
-        if(seatA2Booked){
-            Toast.makeText(this, "Seat already booked!", Toast.LENGTH_SHORT).show();
-        }
-        if(!seatA2Booked){
-            seatA2Button.setImageResource(R.drawable.seatselected);
-            if(!seatA1Booked){seatA1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB1Booked){seatB1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB2Booked){seatB2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB3Booked){seatB3Button.setImageResource(R.drawable.seatavailable);}
-            seatNumberText.setText("A2");
-        }
-        if(c.equals("A2")){
+        if(!seatA2Booked) {
+            if(numberOfSeats > ticketNumber) {
+                Toast.makeText(this, "You can't book more seats Sorry!", Toast.LENGTH_SHORT).show();
+            }else {
+                seatA2Button.setImageResource(R.drawable.seatselected);
+                seatA2Booked=true;
+                numberOfSeats++;
+                seatNumberText.setText("A2");
+                selectedArray.add("A2");
+            }
+        }else if (seatA2Booked) {
             seatA2Button.setImageResource(R.drawable.seatavailable);
+            seatA2Booked=false;
+            numberOfSeats--;
             seatNumberText.setText("");
+            selectedArray.remove("A2");
         }
+
     }
 
     public void seatB1(View view){
-        CharSequence c = seatNumberText.getText();
-        if(seatB1Booked){
-            Toast.makeText(this, "Seat already booked!", Toast.LENGTH_SHORT).show();
-        }
-        if(!seatB1Booked){
-            seatB1Button.setImageResource(R.drawable.seatselected);
-            if(!seatA1Booked){seatA1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatA2Booked){seatA2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB2Booked){seatB2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB3Booked){seatB3Button.setImageResource(R.drawable.seatavailable);}
-            seatNumberText.setText("B1");
-        }
-        if(c.equals("B1")){
+        if(!seatB1Booked) {
+            if(numberOfSeats > ticketNumber) {
+                Toast.makeText(this, "You can't book more seats Sorry!", Toast.LENGTH_SHORT).show();
+            }else {
+                seatB1Button.setImageResource(R.drawable.seatselected);
+                seatB1Booked=true;
+                numberOfSeats++;
+                seatNumberText.setText("B1");
+                selectedArray.add("B1");
+            }
+        }else if (seatB1Booked) {
             seatB1Button.setImageResource(R.drawable.seatavailable);
+            seatB1Booked=false;
+            numberOfSeats--;
             seatNumberText.setText("");
+            selectedArray.remove("B1");
         }
+
     }
 
     public void seatB2(View view){
-        CharSequence c = seatNumberText.getText();
-        if(seatB2Booked){
-            Toast.makeText(this, "Seat already booked!", Toast.LENGTH_SHORT).show();
-        }
-        if(!seatB2Booked){
-            seatB2Button.setImageResource(R.drawable.seatselected);
-            if(!seatA1Booked){seatA1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatA2Booked){seatA2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB1Booked){seatB1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB3Booked){seatB3Button.setImageResource(R.drawable.seatavailable);}
-            seatNumberText.setText("B2");
-        }
-        if(c.equals("B2")){
+        if(!seatB2Booked) {
+            if(numberOfSeats > ticketNumber) {
+                Toast.makeText(this, "You can't book more seats Sorry!", Toast.LENGTH_SHORT).show();
+            }else {
+                seatB2Button.setImageResource(R.drawable.seatselected);
+                seatB2Booked=true;
+                numberOfSeats++;
+                seatNumberText.setText("B2");
+                selectedArray.add("B2");
+            }
+        }else if (seatB2Booked) {
             seatB2Button.setImageResource(R.drawable.seatavailable);
+            seatB2Booked=false;
+            numberOfSeats--;
             seatNumberText.setText("");
+            selectedArray.remove("B2");
         }
     }
 
     public void seatB3(View view){
-        CharSequence c = seatNumberText.getText();
-        if(seatB3Booked){
-            Toast.makeText(this, "Seat already booked!", Toast.LENGTH_SHORT).show();
-        }
-        if(!seatB3Booked){
-            seatB3Button.setImageResource(R.drawable.seatselected);
-            if(!seatA1Booked){seatA1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatA2Booked){seatA2Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB1Booked){seatB1Button.setImageResource(R.drawable.seatavailable);}
-            if(!seatB2Booked){seatB2Button.setImageResource(R.drawable.seatavailable);}
-            seatNumberText.setText("B3");
-        }
-        if(c.equals("B3")){
+        if(!seatB3Booked) {
+            if(numberOfSeats > ticketNumber) {
+                Toast.makeText(this, "You can't book more seats Sorry!", Toast.LENGTH_SHORT).show();
+            }else {
+                seatB3Button.setImageResource(R.drawable.seatselected);
+                seatB3Booked=true;
+                numberOfSeats++;
+                seatNumberText.setText("B3");
+                selectedArray.add("B3");
+            }
+        }else if (seatB3Booked) {
             seatB3Button.setImageResource(R.drawable.seatavailable);
+            seatB3Booked=false;
+            numberOfSeats--;
             seatNumberText.setText("");
+            selectedArray.remove("B3");
         }
-    }
 
+    }
 
 }

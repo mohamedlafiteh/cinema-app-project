@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +17,7 @@ import java.util.ArrayList;
 public class BookingConfirmationActivity extends AppCompatActivity {
 
     String selectSeatPassed;
+
     String film;
     String cinemaName;
     String dateSelected;
@@ -27,16 +27,57 @@ public class BookingConfirmationActivity extends AppCompatActivity {
     TextView tickTotal;
     TextView tickP;
 
+    //ian added
+    TextView seat1Book;
+    TextView seat2Book;
+    TextView seat3Book;
+    TextView seat4Book;
+    TextView seat5Book;
+
+
+
+    int spinnerPosition;
+
+    public static String filmAC = "";
+    public static String cinemaNameAC = "";
+    public static String dateSelectedAC = "";
+
+    public static void setFilmAC(String s) {
+        filmAC = s;
+    }
+
+    public static void setCinemaNameAC(String s) {
+        cinemaNameAC = s;
+    }
+
+    public static void setDateSelectedAC(String s) {
+        dateSelectedAC = s;
+    }
+
+    public static int tickNum;
+    ArrayList<String> allseats;
+
+
+
+    //END ian added
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_confirmation);
         Intent intent = getIntent();
+        //ian added
+        spinnerPosition = 0;
+
+        Intent seatIntent = getIntent();
+        allseats = new ArrayList<>();
+
+
+
         try {
             TextView cinemaView = findViewById(R.id.c_t_id);
-            TextView dateView = findViewById(R.id.textView5);
-            TextView filmView = findViewById(R.id.textView);
+            TextView dateView = findViewById(R.id.emailView);
+            TextView filmView = findViewById(R.id.firstNameView);
             if (intent.getStringExtra("cc2") != null && intent.getStringExtra("ss2") != null && intent.getStringExtra("ff2") != null) {
 
 
@@ -89,21 +130,51 @@ public class BookingConfirmationActivity extends AppCompatActivity {
                     //  String s1= parent.getSelectedItem().toString();
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 1));
                     tickP.setText(parent.getSelectedItem().toString());
+                    spinnerPosition = pos + 1;
+                    /*seat1Book.setVisibility(View.VISIBLE);
+                    seat2Book.setVisibility(View.INVISIBLE);
+                    seat3Book.setVisibility(View.INVISIBLE);
+                    seat4Book.setVisibility(View.INVISIBLE);
+                    seat5Book.setVisibility(View.INVISIBLE);*/
                 } else if (pos == 1) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 2));
                     tickP.setText(parent.getSelectedItem().toString());
+                    spinnerPosition = pos + 1;
+                    /*seat1Book.setVisibility(View.VISIBLE);
+                    seat2Book.setVisibility(View.VISIBLE);
+                    seat3Book.setVisibility(View.INVISIBLE);
+                    seat4Book.setVisibility(View.INVISIBLE);
+                    seat5Book.setVisibility(View.INVISIBLE);*/
 
                 } else if (pos == 2) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 3));
                     tickP.setText(parent.getSelectedItem().toString());
+                    spinnerPosition = pos + 1;
+                    /*seat1Book.setVisibility(View.VISIBLE);
+                    seat2Book.setVisibility(View.VISIBLE);
+                    seat3Book.setVisibility(View.VISIBLE);
+                    seat4Book.setVisibility(View.INVISIBLE);
+                    seat5Book.setVisibility(View.INVISIBLE);*/
 
                 } else if (pos == 3) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 4));
                     tickP.setText(parent.getSelectedItem().toString());
-
+                    spinnerPosition = pos + 1;
+                    /*seat1Book.setVisibility(View.VISIBLE);
+                    seat2Book.setVisibility(View.VISIBLE);
+                    seat3Book.setVisibility(View.VISIBLE);
+                    seat4Book.setVisibility(View.VISIBLE);
+                    seat5Book.setVisibility(View.INVISIBLE);
+*/
                 } else if (pos == 4) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 5));
                     tickP.setText(parent.getSelectedItem().toString());
+                    spinnerPosition = pos + 1;
+                    /*seat1Book.setVisibility(View.VISIBLE);
+                    seat2Book.setVisibility(View.VISIBLE);
+                    seat3Book.setVisibility(View.VISIBLE);
+                    seat4Book.setVisibility(View.VISIBLE);
+                    seat5Book.setVisibility(View.VISIBLE);*/
 
                 }
             }
@@ -120,6 +191,42 @@ public class BookingConfirmationActivity extends AppCompatActivity {
     public void lunchSeatSelectActivity(View v) {
         // lunch the activity
         Intent i = new Intent(this, SeatSelectActivity.class);
+        i.putExtra("ticket", spinnerPosition);
+        startActivityForResult(i, 1);
+    }
+
+    public void seat1Select(View v) {
+        //tickNum = 1;
+        Intent i = new Intent(this, SeatSelectActivity.class);
+        i.putExtra("ticket", 1);
+        startActivityForResult(i, 1);
+    }
+
+    public void seat2Select(View v) {
+        //tickNum = 2;
+        Intent i = new Intent(this, SeatSelectActivity.class);
+        i.putExtra("ticket", 2);
+        startActivityForResult(i, 1);
+    }
+
+    public void seat3Select(View v) {
+        //tickNum = 3;
+        Intent i = new Intent(this, SeatSelectActivity.class);
+        i.putExtra("ticket", 3);
+        startActivityForResult(i, 1);
+    }
+
+    public void seat4Select(View v) {
+        //tickNum = 4;
+        Intent i = new Intent(this, SeatSelectActivity.class);
+        i.putExtra("ticket", 4);
+        startActivityForResult(i, 1);
+    }
+
+    public void seat5Select(View v) {
+        //tickNum = 5;
+        Intent i = new Intent(this, SeatSelectActivity.class);
+        i.putExtra("ticket", 5);
         startActivityForResult(i, 1);
     }
 
@@ -128,9 +235,21 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-                String strEditText = data.getStringExtra("seat");
-                TextView t = findViewById(R.id.textView11);
-                t.setText(strEditText);
+
+                seat1Book = findViewById(R.id.seat1Select);
+                seat2Book = findViewById(R.id.seat2Select);
+                seat3Book = findViewById(R.id.seat3Select);
+                seat4Book = findViewById(R.id.seat4Select);
+                seat5Book = findViewById(R.id.seat5Select);
+
+
+                TextView[] seatsView= {  seat1Book, seat2Book, seat3Book, seat4Book, seat5Book};
+
+                tickNum = data.getIntExtra("tickNum", 6);
+                allseats=data.getStringArrayListExtra("allSeatsList");
+                for(int i=0;i<allseats.size();i++){
+                    seatsView[i].setText(allseats.get(i));
+                }
             }
         }
     }
@@ -139,7 +258,9 @@ public class BookingConfirmationActivity extends AppCompatActivity {
     public void lunchConfirmShowActivity(View v) {
         // lunch the activity
         Intent i = new Intent(this, ConfirmedShowActivity.class);
-        TextView t = findViewById(R.id.textView11);
+
+
+        TextView t = findViewById(R.id.seat1Select);
         String seatNumber = t.getText().toString();
         if (seatNumber.length() == 0) {
             Toast.makeText(BookingConfirmationActivity.this,
@@ -148,7 +269,16 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
             try {
                 if (allData.size() > 0) {
+
+                    //ian added
+                    filmAC = film;
+                    cinemaNameAC = cinemaName;
+                    dateSelectedAC = dateSelected;
+                    //END ian added
+
                     startActivityForResult(i, 1);
+
+
                 }
             } catch (Exception e) {
                 e.printStackTrace();
