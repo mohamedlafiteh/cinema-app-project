@@ -131,50 +131,29 @@ public class BookingConfirmationActivity extends AppCompatActivity {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 1));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
-                    /*seat1Book.setVisibility(View.VISIBLE);
-                    seat2Book.setVisibility(View.INVISIBLE);
-                    seat3Book.setVisibility(View.INVISIBLE);
-                    seat4Book.setVisibility(View.INVISIBLE);
-                    seat5Book.setVisibility(View.INVISIBLE);*/
+
                 } else if (pos == 1) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 2));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
-                    /*seat1Book.setVisibility(View.VISIBLE);
-                    seat2Book.setVisibility(View.VISIBLE);
-                    seat3Book.setVisibility(View.INVISIBLE);
-                    seat4Book.setVisibility(View.INVISIBLE);
-                    seat5Book.setVisibility(View.INVISIBLE);*/
+
 
                 } else if (pos == 2) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 3));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
-                    /*seat1Book.setVisibility(View.VISIBLE);
-                    seat2Book.setVisibility(View.VISIBLE);
-                    seat3Book.setVisibility(View.VISIBLE);
-                    seat4Book.setVisibility(View.INVISIBLE);
-                    seat5Book.setVisibility(View.INVISIBLE);*/
+
 
                 } else if (pos == 3) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 4));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
-                    /*seat1Book.setVisibility(View.VISIBLE);
-                    seat2Book.setVisibility(View.VISIBLE);
-                    seat3Book.setVisibility(View.VISIBLE);
-                    seat4Book.setVisibility(View.VISIBLE);
-                    seat5Book.setVisibility(View.INVISIBLE);
-*/
+
+
                 } else if (pos == 4) {
                     tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 5));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
-                    /*seat1Book.setVisibility(View.VISIBLE);
-                    seat2Book.setVisibility(View.VISIBLE);
-                    seat3Book.setVisibility(View.VISIBLE);
-                    seat4Book.setVisibility(View.VISIBLE);
-                    seat5Book.setVisibility(View.VISIBLE);*/
 
                 }
             }

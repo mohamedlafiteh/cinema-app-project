@@ -20,22 +20,8 @@ public class SeatSelectActivity extends AppCompatActivity {
     public static boolean seatB2Booked;
     public static boolean seatB3Booked;
 
-    //is selected
-    public static boolean seatA1Selected;
-    public static boolean seatA2Selected;
-    public static boolean seatB1Selected;
-    public static boolean seatB2Selected;
-    public static boolean seatB3Selected;
-
     ArrayList<String> selectedArray;
-
-    public void setSeatA1Booked(Boolean b){seatA1Booked = b;}
-    public void setSeatA2Booked(Boolean b){seatA2Booked = b;}
-    public void setSeatB1Booked(Boolean b){seatB1Booked = b;}
-    public void setSeatB2Booked(Boolean b){seatB2Booked = b;}
-    public void setSeatB3Booked(Boolean b){seatB3Booked = b;}
-
-
+    
     //Image buttons for each seat
     ImageButton seatA1Button;
     ImageButton seatA2Button;
