@@ -8,10 +8,10 @@
     tools:context=".BookingConfirmationActivity">
 
     <ImageView
-        android:background="@drawable/image_rounded_corner"
+
         android:id="@+id/imageView"
-        android:layout_width="354dp"
-        android:layout_height="124dp"
+        android:layout_width="338dp"
+        android:layout_height="85dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/c"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="450dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="40dp"
@@ -42,13 +42,13 @@
 
             android:id="@+id/book_ticket_title_id"
             android:layout_width="273dp"
-            android:layout_height="29dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="#FF5722"
             android:divider="?android:dividerHorizontal"
             android:gravity="center"
             android:text="Confirm Booking"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
@@ -139,24 +139,28 @@
 
         <Button
             android:id="@+id/cancel_button_id"
-            android:layout_width="98dp"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
             android:layout_marginBottom="8dp"
             android:text="Cancel"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/search_button_id4"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/search_button_id4"
-            android:layout_width="89dp"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
             android:layout_marginBottom="8dp"
             android:onClick="lunchConfirmShowActivity"
             android:text="Book"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cancel_button_id"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -165,12 +169,12 @@
 
             android:layout_width="200dp"
             android:layout_height="73dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/rounded_spinner"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.523"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3">
 
             <TextView
 
@@ -217,7 +221,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:text="£14.5"
+                android:text="£14.49"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -238,15 +242,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginTop="5dp"
             android:onClick="lunchSeatSelectActivity"
             android:text="Select seats"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -320,10 +323,8 @@
         android:layout_height="64dp"
 
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/footer_bar_rounded"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">

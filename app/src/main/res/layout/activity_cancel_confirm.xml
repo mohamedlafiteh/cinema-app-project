@@ -42,7 +42,6 @@
         android:layout_width="354dp"
         android:layout_height="124dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/image_rounded_corner"
         android:src="@drawable/c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"

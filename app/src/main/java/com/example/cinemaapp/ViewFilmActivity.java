@@ -233,6 +233,27 @@ public class ViewFilmActivity extends AppCompatActivity {
 
     }
 
+    public void lunchAccountActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Lunch the login page activity .
+     */
+    public void lunchLoginActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void lunchMainnActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
 }
 

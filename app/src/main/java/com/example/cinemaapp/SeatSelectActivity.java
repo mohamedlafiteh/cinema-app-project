@@ -248,4 +248,29 @@ public class SeatSelectActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Lunch the account page activity .
+     */
+    public void lunchAccounttActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+
+    }
+
+    /**
+     * Lunch the login page activity .
+     */
+    public void lunchLoginnActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void lunchMainActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }

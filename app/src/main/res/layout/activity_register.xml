@@ -10,10 +10,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="356dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/image_rounded_corner"
+        android:layout_width="322dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,17 +22,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="291dp"
-        android:layout_height="536dp"
+        android:layout_width="287dp"
+        android:layout_height="556dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="40dp"
         android:background="@drawable/rounded_border"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -42,13 +39,13 @@
 
             android:id="@+id/register_title_id"
             android:layout_width="273dp"
-            android:layout_height="29dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="#FF5722"
             android:divider="?android:dividerHorizontal"
             android:gravity="center"
-            android:text="Register"
-            android:textSize="18sp"
+            android:text="Registration"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
@@ -67,11 +64,11 @@
 
         <EditText
             android:id="@+id/name"
-            android:layout_width="82dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="110dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
@@ -84,9 +81,9 @@
 
         <EditText
             android:id="@+id/emailAddress"
-            android:layout_width="153dp"
-            android:layout_height="18dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
@@ -94,18 +91,17 @@
             android:paddingLeft="10dp"
             android:text=""
             android:textColor="#B5AFAF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView15"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <EditText
             android:id="@+id/LastName"
-            android:layout_width="82dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_width="110dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
@@ -114,16 +110,14 @@
             android:text=""
             android:textColor="#B5AFAF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.37"
-            app:layout_constraintStart_toEndOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
 
         <EditText
             android:id="@+id/PasswordRegistration"
-            android:layout_width="152dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
@@ -132,16 +126,15 @@
             android:paddingLeft="10dp"
             android:text=""
             android:textColor="#B5AFAF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView16"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <EditText
             android:id="@+id/PasswordConfirmation"
-            android:layout_width="153dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
@@ -149,40 +142,45 @@
             android:paddingLeft="10dp"
             android:text=""
             android:textColor="#B5AFAF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="180dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:text="Credit/Debit Card number:"
-            android:textColor="#040000"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/CardNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/PasswordConfirmation" />
 
         <EditText
             android:id="@+id/CardNumber"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             android:ems="10"
             android:hint="xxx-xxxx-xxxx-xxxx"
             android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Spinner
             android:id="@+id/SpinnerYear"
             android:layout_width="84dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_spinner"
             android:backgroundTint="@color/grey"
             app:layout_constraintEnd_toStartOf="@+id/spinnerMonth"
@@ -192,9 +190,9 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="89dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Expiry Date:"
             android:textColor="#040101"
             android:textStyle="bold"
@@ -204,8 +202,8 @@
         <Spinner
             android:id="@+id/spinnerMonth"
             android:layout_width="85dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="64dp"
             android:layout_marginRight="64dp"
             android:background="@drawable/rounded_spinner"
@@ -217,7 +215,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="4dp"
             android:text="Year"
             android:textColor="#020000"
             android:textStyle="bold|italic"
@@ -229,7 +227,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="4dp"
             android:text="Month"
             android:textColor="#020000"
             android:textStyle="bold|italic"
@@ -241,8 +239,9 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="16dp"
             android:text="Register"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -251,37 +250,35 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
             android:layout_marginTop="8dp"
             android:text="First name "
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/register_title_id" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:text="Email"
+            android:textSize="18dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/emailAddress"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/emailAddress"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
             android:layout_marginTop="8dp"
             android:text="Last name "
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.095"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintStart_toStartOf="@+id/LastName"
             app:layout_constraintTop_toBottomOf="@+id/register_title_id" />
 
         <TextView
@@ -290,9 +287,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Password"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/PasswordRegistration"
+            app:layout_constraintStart_toStartOf="@+id/PasswordRegistration"
             app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
 
         <TextView
@@ -301,13 +299,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Confirm password"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/PasswordConfirmation"
+            app:layout_constraintStart_toStartOf="@+id/PasswordConfirmation"
             app:layout_constraintTop_toBottomOf="@+id/PasswordRegistration" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,7 +35,7 @@
             />
         <activity
             android:name=".BookingConfirmationActivity"
-            android:label="Booking confirmation"
+            android:label="Please confirm your booking"
             android:parentActivityName=".ViewFilmActivity"
             android:launchMode="singleTop"
             />
@@ -58,6 +58,7 @@
             />
         <activity
             android:name=".LoginActivity"
+            android:label="Login page"
             />
         <activity  
             android:name=".MainActivity" >

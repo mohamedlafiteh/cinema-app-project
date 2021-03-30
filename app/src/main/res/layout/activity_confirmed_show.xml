@@ -8,7 +8,6 @@
     tools:context=".BookingConfirmationActivity">
 
     <ImageView
-        android:background="@drawable/image_rounded_corner"
         android:id="@+id/imageView"
         android:layout_width="354dp"
         android:layout_height="124dp"

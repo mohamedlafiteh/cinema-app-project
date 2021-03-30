@@ -26,7 +26,7 @@ public class CinemaDetailsActivity extends AppCompatActivity {
 
         TextView c = findViewById(R.id.cin_dets_id);
         Intent in = getIntent();
-        String name= in.getStringExtra("name");
+        String name = in.getStringExtra("name");
         c.setText(name);
 
         TextView add = findViewById(R.id.textView3);
@@ -36,8 +36,8 @@ public class CinemaDetailsActivity extends AppCompatActivity {
         int r1 = new Random().nextInt(cinemaAddresses.length);
         int r2 = new Random().nextInt(randomCinemaImages.length);
 
-        String s =  cinemaAddresses[r1];
-        int img=  randomCinemaImages[r2];
+        String s = cinemaAddresses[r1];
+        int img = randomCinemaImages[r2];
 
         add.setText(s);
         im.setImageResource(img);
@@ -60,6 +60,27 @@ public class CinemaDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
+        public void lunchAccountActivity(View v) {
+            // lunch the activity
+            Intent intent = new Intent(this, AccountActivity.class);
+            startActivity(intent);
+        }
+
+        /**
+         * Lunch the login page activity .
+         */
+        public void lunchLoginActivity(View v) {
+            // lunch the activity
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+
+        public void lunchMainnActivity(View v) {
+            // lunch the activity
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 }
 
 

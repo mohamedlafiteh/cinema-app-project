@@ -9,10 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="420dp"
+        android:layout_width="354dp"
         android:layout_height="124dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/image_rounded_corner"
         android:src="@drawable/c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
@@ -27,7 +26,7 @@
         android:layout_height="466dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/rounded_border"
@@ -41,13 +40,13 @@
 
             android:id="@+id/book_ticket_title_id"
             android:layout_width="273dp"
-            android:layout_height="29dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="#FF5722"
             android:divider="?android:dividerHorizontal"
             android:gravity="center"
             android:text="Select Seat"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
@@ -70,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             android:text="Cancel"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/search_button_id4"
             app:layout_constraintHorizontal_bias="0.512"
@@ -83,6 +83,7 @@
             android:layout_marginRight="44dp"
             android:layout_marginBottom="28dp"
             android:text="Confirm"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -124,7 +125,6 @@
             app:srcCompat="@drawable/cinemascreen" />
 
         <ImageButton
-            app:srcCompat="@drawable/seatavailable"
             android:id="@+id/seatA1Button"
             android:layout_width="78dp"
             android:layout_height="59dp"
@@ -133,11 +133,11 @@
             android:layout_marginTop="16dp"
             android:onClick="seatA1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView9"
+            app:srcCompat="@drawable/seatavailable" />
 
         <ImageButton
             android:id="@+id/seatA2Button"
-            app:srcCompat="@drawable/seatnotavailable"
             android:layout_width="78dp"
             android:layout_height="59dp"
             android:layout_marginTop="16dp"
@@ -145,7 +145,8 @@
             android:layout_marginRight="68dp"
             android:onClick="seatA2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView9"
+            app:srcCompat="@drawable/seatnotavailable" />
 
         <ImageButton
             android:id="@+id/seatB3Button"
@@ -172,7 +173,6 @@
             app:srcCompat="@drawable/seatavailable" />
 
         <ImageButton
-            app:srcCompat="@drawable/seatavailable"
             android:id="@+id/seatB1Button"
             android:layout_width="78dp"
             android:layout_height="59dp"
@@ -181,9 +181,61 @@
             android:layout_marginTop="20dp"
             android:onClick="seatB1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seatA1Button" />
+            app:layout_constraintTop_toBottomOf="@+id/seatA1Button"
+            app:srcCompat="@drawable/seatavailable" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="335dp"
+        android:layout_height="64dp"
+
+        android:layout_marginTop="16dp"
+        android:background="@drawable/footer_bar_rounded"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="84dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="12dp"
+            android:onClick="lunchMainActivity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_action_name"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="54dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:onClick="lunchLoginnActivity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_login_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="69dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="lunchAccounttActivity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_perm_identity_24"
+            tools:ignore="VectorDrawableCompat" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

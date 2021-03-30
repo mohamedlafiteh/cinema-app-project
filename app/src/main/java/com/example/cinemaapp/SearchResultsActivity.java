@@ -24,10 +24,10 @@ public class SearchResultsActivity extends AppCompatActivity {
     /**
      Movie Description array
      */
-    String [] movieDescription = {"Light of the sky from 1990, it is been in the top ten",
-            "Moon  of the sky from 1890, it is been in the top 20","Castle-of the sky from 2020, it is been in the top ten",
-            "Snow-Light of the sky from 2021, it is been in the top ten","Ghost-Light of the sky from 1990, it is been in the top ten",
-            "Sky-Light of the sky from 1990, it is been in the top ten"};
+    String [] movieDescription = {"Light of the sky from 1990, it has been in the top ten",
+            "Moon of the sky from 1890, it has been in the top 20","Castle-of the sky from 2020, it has been in the top ten",
+            "Snow-Light of the sky from 2021, it has been in the top ten","Ghost-Light of the sky from 1990, it has been in the top ten",
+            "Sky-Light of the sky from 1990, it has been in the top ten"};
 
     int[] images = {R.drawable.p1,R.drawable.p2,R.drawable.p3,R.drawable.p4,R.drawable.p5,R.drawable.p6};
     ArrayList<String> resultList = new ArrayList<>();
@@ -108,6 +108,30 @@ public class SearchResultsActivity extends AppCompatActivity {
         intent.putExtra("name",s);
         startActivity(intent);
 
+    }
+
+    /**
+     * Lunch the login page activity .
+     */
+    public void lunchLoginActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Lunch the account page activity .
+     */
+    public void lunchAccountActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+    }
+
+    public void lunchMainnActivity(View v) {
+        // lunch the activity
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 

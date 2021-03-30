@@ -128,30 +128,30 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
                 if (pos == 0) {
                     //  String s1= parent.getSelectedItem().toString();
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 1));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.49) * 1));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
 
                 } else if (pos == 1) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 2));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.49) * 2));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
 
 
                 } else if (pos == 2) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 3));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.49) * 3));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
 
 
                 } else if (pos == 3) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 4));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.49) * 4));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
 
 
                 } else if (pos == 4) {
-                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.5) * 5));
+                    tickTotal.setText("£" + String.valueOf(Double.valueOf(14.49) * 5));
                     tickP.setText(parent.getSelectedItem().toString());
                     spinnerPosition = pos + 1;
 
