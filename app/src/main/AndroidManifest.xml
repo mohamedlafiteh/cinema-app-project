@@ -57,11 +57,12 @@
             android:parentActivityName=".MainActivity"
             />
         <activity
-            android:name=".LoginActivity"
-            android:label="Login page"
+
+            android:name=".MainActivity"
+
             />
-        <activity  
-            android:name=".MainActivity" >
+        <activity
+            android:name=".LoginActivity"   android:label="Login page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
